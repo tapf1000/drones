@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "90f19013-58b7-45c3-b09b-0e777f30ee0d",
+		"name": "Drone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7296174"
+	},
+	"item": [
+		{
+			"name": "Register Drone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\" : \"IDLE\",\r\n    \"percentage\" : 46,\r\n    \"model\" : \"CRUISERWEIGHT\",\r\n    \"serialNumber\" : \"123456781\",\r\n    \"weight\" : 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6220/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6220",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load Drone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Peniciline",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "PN-01",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/tapfuma.chigwada/Pictures/VDI Access Request.png"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6220/api/v1/load/123456781",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6220",
+					"path": [
+						"api",
+						"v1",
+						"load",
+						"123456781"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Available Drones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6220/api/v1/availability",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6220",
+					"path": [
+						"api",
+						"v1",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get  Medications For A Drone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:6220/api/v1/medications/123456781",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6220",
+					"path": [
+						"api",
+						"v1",
+						"medications",
+						"123456781"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Battery Level For A Drone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:6220/api/v1/battery/123456781",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6220",
+					"path": [
+						"api",
+						"v1",
+						"battery",
+						"123456781"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
